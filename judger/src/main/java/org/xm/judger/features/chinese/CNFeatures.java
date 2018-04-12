@@ -9,7 +9,7 @@ import java.util.HashMap;
  */
 public interface CNFeatures {
     /**
-     * get feature score for each chinese essay instance
+     * 计算特征分数
      *
      * @param instance
      * @return

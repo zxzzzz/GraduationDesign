@@ -14,15 +14,17 @@ import java.util.ArrayList;
 public class AnalysisEssayTest {
     @Test
     public void testCN() throws IOException {
+        //文章路径
         String trainSetPath = "data/jinyong";
+        //保存路径
         String saveTrainFeaturesPath = "data/jinyong_training_result.arff";
-
+        //中文解析器
         CNEssayInstanceParser parser = new CNEssayInstanceParser();
-        // Parse the input training file
+        //加载中文文章 设置内容/标题
         ArrayList<CNEssayInstance> instances = parser.load(trainSetPath);
+        //设置文章
         Judger.setCNInstances(instances);
-
-        // Get feature Scores for each instance
+        //计算特征分数
         ArrayList<CNEssayInstance> instancesFeatures = FeatureHandler.getFeatures(instances);
         // Now we have all the instances and features
         // use any Machine Learning Tools (such as Weka)

@@ -39,6 +39,7 @@ public class FeatureHandler {
     }
 
     public static ArrayList<CNEssayInstance> getFeatures(ArrayList<CNEssayInstance> instances) {
+        //设置特征集
         ArrayList<CNFeatures> CNFeaturesArrayList = new ArrayList<>();
         CNFeaturesArrayList.add(new CNSentenceLengthFeature());
         CNFeatures wordLengthFeature = new CNWordLengthFeature();

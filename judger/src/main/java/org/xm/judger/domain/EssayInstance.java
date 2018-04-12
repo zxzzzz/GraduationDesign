@@ -14,8 +14,17 @@ public abstract class EssayInstance {
     //storing all the fields available in the training set file
     public int id;
     public int set;
+    /**
+     * 文章
+     */
     public String essay;
+    /**
+     * 标题
+     */
     public String title;
+    /**
+     * 文件名，同标题
+     */
     public String filename;
     public int rater1_domain1 = -1;
     public int rater2_domain1 = -1;
