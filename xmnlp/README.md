@@ -1,8 +1,5 @@
 # xmnlp自然语言处理包
 
-
-#### author：xuming(shibing624) 
-#### environment：jdk 1.6
     
 
 1.  get   ----add the rule chinese word segmentation: 2016.06.21
