@@ -1,0 +1,5 @@
+xmnlp代码分析
+1.Rule：规则分词 ---- 正向最大匹配、逆向最大匹配、双向匹配
+2.Segmenter：基于 trie 树结构实现高效词图扫描、动态规划--基于词频最大切分组合
+3.FinalSegmenter ：基于 HMM(BEMS) 模型，采用 Viterbi (维特比)算法实现未登录词识别
+4.Viterbi  维特比算法

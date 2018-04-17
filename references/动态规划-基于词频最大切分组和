@@ -1,0 +1,29 @@
+在前面，我们已经知道dict中所有的单词和词频信息已经存在了一个trie树中，并且需要分词的句子已经构建成了一个DAG图，构建的过程也运用了dict。那么这次我们来说如何基于每句话的DAG图，找到一个组合路径，使得该组合最合理（即打分最高）？
+
+
+    我们直接针对Jieba分词的源代码来解释，其中已经有了很多注释：
+
+
+[python] view plain copy
+
+    def calc(sentence,DAG,idx,route):  #动态规划，计算最大概率的切分组合
+        #输入sentence是句子，DAG句子的有向无环图
+        N = len(sentence)  #句子长度
+        route[N] = (0.0,'')
+        for idx in xrange(N-1,-1,-1):  #和range用法一样，不过还是建议使用xrange
+            #可以看出是从后往前遍历每个分词方式的
+
+            #下面的FREQ保存的是每个词在dict中的频度得分，打分的公式是 log(float(v)/total)，其中v就是被打分词语的频数
+             #FREQ.get(sentence[idx:x+1],min_freq)表示，如果字典get没有找到这个key，那么我们就使用最后的frequency来做
+             #由于DAG中是以字典+list的结构存储的，所以确定了idx为key之外，
+             #仍然需要for x in DAG[idx]来遍历所有的单词结合方式（因为存在不同的结合方法，例如“国”，“国家”等）
+             #以（频度得分值，词语最后一个字的位置）这样的tuple保存在route中
+            candidates = [ ( FREQ.get(sentence[idx:x+1],min_freq) + route[x+1][0] , x ) for x in DAG[idx] ]
+            route[idx] = max(candidates)
+
+
+
+    整体的思路就是使用动态规划方法，从后往前遍历，选择一个频度得分最大的一个切分组合。
+
+
+    那么可能会问为何是从后往前实现动态规划呢？因为汉语句子的重心经常落在后面, 就是落在右边, 因为通常情况下形容词太多, 后面的才是主干, 因此, 从右往左计算, 正确率要高于从左往右计算, 这个类似于逆向最大匹配！
