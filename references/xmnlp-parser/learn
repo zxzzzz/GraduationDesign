@@ -1,0 +1,5 @@
+1.词性标注：http://www.hankcs.com/nlp/part-of-speech-tagging.html#h2-8
+2.通用维比特算法的Java实现：http://www.hankcs.com/nlp/general-java-implementation-of-the-viterbi-algorithm.html
+3.N最短路径:http://www.hankcs.com/nlp/segment/n-shortest-path-to-the-java-implementation-and-application-segmentation.html
+4.textrank算法提取关键词的Java实现：http://www.hankcs.com/nlp/textrank-algorithm-to-extract-the-keywords-java-implementation.html
+5.层叠隐马模型下的音译人名和日本人名识别：http://www.hankcs.com/nlp/name-transliteration-cascaded-hidden-markov-model-and-japanese-personal-names-recognition.html
