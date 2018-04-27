@@ -1,0 +1,13 @@
+Python语法学习
+1 退出 ：ctrl+D
+2 脚本运行 ：python下运行
+          python test.py
+          py文件头部：/usr/bin/python，加运行权限 chmod +x test.py ,运行：。/test.py
+3 标识符：以下划线开头的标识符有特殊意义：_foo以单下划线开头 _foo 的代表不能直接访问的类属性，需通过类提供的接口进行访问，不能用 from xxx import * 而导入；
+
+以双下划线开头的 __foo 代表类的私有成员；以双下划线开头和结尾的 __foo__ 代表 Python 里特殊方法专用的标识，如 __init__() 代表类的构造函数。
+4 无大括号，缩进要一致
+5 注释：单行注释：#;多行注释:""" /'''
+6 同一行使用多条语句，语句之间用分号分割，print 默认输出是换行的，如果要实现不换行需要在变量末尾加上逗号 ,
+7 数据类型：数字(int/long/float/complex)/字符串(str[m:n],*重复，+拼接)/List[]/Tule():不能二次赋值，只读/Dictionary：key:value
+8 del：删除对象引用

@@ -1,0 +1,25 @@
+scikit-learn中的随机森林
+
+sklearn.ensemble模块包含两种基于随机决策树的决策算法：随机森林算法和ExtraTrees。是为决策树涉设计的包含混合扰动技术的算法。分类器依据引入
+随机性进行建模。整体的预测结果为各独立的分类器预测结果的平均值。
+随机森林：由许多棵独立的决策树组成。得到森林后，每个决策树对新的输入样本进行分类判断，选择最多的分类，即为该样本的类标签。
+
+quick_start:构建最简单的随机森林分类器
+
+>>> from sklearn.ensemble import RandomForestClassifier
+>>> X = [[0, 0], [1, 1]]  ////////[样本,特征]
+>>> Y = [0, 1]  ///////[特征]
+>>> clf = RandomForestClassifier(n_estimators=10)
+>>> clf = clf.fit(X, Y)
+
+
+
+
+##########   随机森林分类器
+RandomForestClassifier(bootstrap=True, class_weight=None, criterion='gini',
+            max_depth=None, max_features='auto', max_leaf_nodes=None,
+            min_impurity_decrease=0.0, min_impurity_split=None,
+            min_samples_leaf=1, min_samples_split=2,
+            min_weight_fraction_leaf=0.0, n_estimators=10, n_jobs=1,
+            oob_score=False, random_state=None, verbose=0,
+            warm_start=False)
